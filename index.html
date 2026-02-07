@@ -6,8 +6,15 @@
     <title>Alessandro Memmola – Sviluppatore & Creatore</title>
     <meta name="description" content="Alessandro Memmola – Sviluppo web, tool utili, progetti creativi e personali. Portfolio e contatti.">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicom.jpg" type="image/jpeg">
+
+    <!-- Eventuale apple-touch-icon per dispositivi mobili -->
+    <link rel="apple-touch-icon" href="/images/favicom.jpg">
+
     <link rel="canonical" href="https://alessandromemmola.com/">
+
     <style>
         * {
             margin: 0;
@@ -25,7 +32,7 @@
         /* Header con immagine copertina */
         header {
             position: relative;
-            height: 75vh;                /* altezza grande – per il cambio 60vh o 80vh */
+            height: 75vh;
             min-height: 500px;
             background: url('images/immagine-copertina.jpg') no-repeat center center;
             background-size: cover;
@@ -36,12 +43,11 @@
             color: white;
         }
 
-        /* Overlay scuro per leggibilità testo */
         header::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.50); /* 50% scuro – regolazione per chiaro/scuro */
+            background: rgba(0, 0, 0, 0.55);
             z-index: 1;
         }
 
@@ -53,21 +59,62 @@
         }
 
         .header-content h1 {
-            font-size: 5.2rem;
+            font-size: 5.8rem;
             font-weight: 900;
-            letter-spacing: -2px;
-            text-shadow: 0 6px 20px rgba(0,0,0,0.9);
+            letter-spacing: -2.5px;
+            text-shadow: 0 8px 25px rgba(0,0,0,0.9);
             margin-bottom: 0.15em;
-            line-height: 1;
+            line-height: 0.95;
         }
 
         .header-content p {
-            font-size: 1.7rem;
+            font-size: 1.85rem;
             font-weight: 400;
-            opacity: 0.95;
-            text-shadow: 0 3px 12px rgba(0,0,0,0.8);
-            max-width: 780px;
+            opacity: 0.92;
+            text-shadow: 0 4px 16px rgba(0,0,0,0.85);
+            max-width: 800px;
             margin: 0 auto;
+        }
+
+        /* Mini pulsante Sponsor in alto a destra */
+        .header-sponsor {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+        }
+
+        .mini-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #ea4aaa;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(234,74,170,0.25);
+            transition: all 0.2s;
+        }
+
+        .mini-btn:hover {
+            background: #f06292;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 14px rgba(234,74,170,0.35);
+        }
+
+        /* Spazio per foto profilo in alto a sinistra */
+        .profile-img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.2);
+            box-shadow: 0 3px 12px rgba(0,0,0,0.5);
+            z-index: 3;
+            object-fit: cover;
         }
 
         /* Contenuto principale */
@@ -146,16 +193,34 @@
             border-top: 1px solid #21262d;
         }
 
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .header-content h1 {
-                font-size: 3.8rem;
+                font-size: 4.2rem;
             }
             .header-content p {
-                font-size: 1.35rem;
+                font-size: 1.45rem;
             }
             header {
-                height: 60vh;
+                height: 65vh;
                 min-height: 420px;
+            }
+            .profile-img {
+                width: 50px;
+                height: 50px;
+            }
+            .mini-btn {
+                padding: 6px 16px;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -163,6 +228,14 @@
 <body>
 
 <header>
+    <!-- Foto profilo (caricala come images/foto-profilo.jpg) -->
+    <img class="profile-img" src="images/foto-profilo.jpg" alt="Alessandro Memmola">
+
+    <!-- Mini pulsante Sponsor -->
+    <div class="header-sponsor">
+        <a href="https://github.com/sponsors/alessandromemmola" target="_blank" class="mini-btn">Sponsor ❤️</a>
+    </div>
+
     <div class="header-content">
         <h1>Alessandro Memmola</h1>
         <p>Sviluppatore · Creatore di tool utili e progetti creativi</p>
@@ -175,7 +248,7 @@
         <h2>Chi sono</h2>
         <p>
             Ciao! Sono Alessandro Memmola, appassionato di sviluppo web e creazione di progetti che semplificano o divertono la vita quotidiana.<br>
-            AskingStars è stato il primo, ma qui trovi tutto il mio percorso, i lavori in corso e i contatti per collaborazioni.
+            AskingStars è stato il mio primo esperimento pubblico, ma qui trovi tutto il mio percorso, i lavori in corso e i contatti per collaborazioni.
         </p>
     </section>
 
@@ -189,7 +262,6 @@
             </div>
 
             <!-- Aggiungi altre card quando hai nuovi progetti -->
-            <!-- <div class="card">...</div> -->
         </div>
     </section>
 
@@ -206,7 +278,9 @@
 <footer>
     <p>© 2026 Alessandro Memmola · 
        <a href="mailto:info@alessandromemmola.com">info@alessandromemmola.com</a> · 
-       <a href="https://github.com/alessandromemmola" target="_blank">GitHub</a>
+       <a href="https://github.com/alessandromemmola" target="_blank">GitHub</a> · 
+       <a href="https://www.linkedin.com/in/alessandro-memmola-233868372/" target="_blank">LinkedIn</a> · 
+       <a href="https://x.com/alexmemmola" target="_blank">X</a>
     </p>
 </footer>
 
