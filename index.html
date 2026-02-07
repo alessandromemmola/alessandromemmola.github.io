@@ -4,58 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alessandro Memmola – Sviluppatore & Creatore</title>
-    <meta name="description" content="Alessandro Memmola – Creo tool web divertenti e utili. AskingStars, siti personali e progetti in arrivo.">
+    <meta name="description" content="Alessandro Memmola – Sviluppo web, tool utili, progetti creativi e personali. Portfolio e contatti.">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://alessandromemmola.github.io/">
+    <link rel="canonical" href="https://alessandromemmola.com/">
     <style>
-        body { margin:0; font-family:system-ui,sans-serif; background:#0d1117; color:#e6edf3; line-height:1.6; }
-        header { background:linear-gradient(135deg,#161b22,#0d1117); padding:100px 20px; text-align:center; }
-        h1 { margin:0; font-size:3.5rem; color:#58a6ff; }
-        .container { max-width:900px; margin:40px auto; padding:0 20px; }
-        .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin:40px 0; }
-        .card { background:#161b22; border:1px solid #30363d; border-radius:12px; padding:24px; transition:0.2s; }
-        .card:hover { transform:translateY(-5px); border-color:#58a6ff; box-shadow:0 8px 24px rgba(88,166,255,0.15); }
-        .btn { display:inline-block; padding:12px 28px; background:#238636; color:white; border-radius:6px; text-decoration:none; font-weight:bold; margin-top:12px; }
-        .btn:hover { background:#2ea043; }
-        footer { text-align:center; padding:40px 20px; color:#8b949e; font-size:0.9rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+        }
+
+        /* Header con immagine copertina */
+        header {
+            position: relative;
+            height: 75vh;                /* altezza grande – puoi cambiarla in 60vh o 80vh */
+            min-height: 500px;
+            background: url('images/immagine-copertina.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* Overlay scuro per leggibilità testo */
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.50); /* 50% scuro – regola se vuoi più chiaro/scuro */
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        .header-content h1 {
+            font-size: 5.2rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            text-shadow: 0 6px 20px rgba(0,0,0,0.9);
+            margin-bottom: 0.15em;
+            line-height: 1;
+        }
+
+        .header-content p {
+            font-size: 1.7rem;
+            font-weight: 400;
+            opacity: 0.95;
+            text-shadow: 0 3px 12px rgba(0,0,0,0.8);
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* Contenuto principale */
+        .container {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 30px;
+        }
+
+        h2 {
+            color: #58a6ff;
+            font-size: 2.6rem;
+            margin: 2.5em 0 1em;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 0.4em;
+            display: inline-block;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin: 2.5em 0;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            padding: 32px;
+            transition: all 0.28s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #58a6ff;
+            box-shadow: 0 14px 36px rgba(88,166,255,0.18);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 34px;
+            background: #238636;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 18px;
+            transition: background 0.25s;
+        }
+
+        .btn:hover {
+            background: #2ea043;
+        }
+
+        .support {
+            text-align: center;
+            margin: 120px 0 80px;
+        }
+
+        .support .btn {
+            background: #ea4aaa;
+            font-size: 1.35rem;
+            padding: 20px 52px;
+        }
+
+        .support .btn:hover {
+            background: #f06292;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 20px 50px;
+            color: #8b949e;
+            font-size: 0.98rem;
+            border-top: 1px solid #21262d;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 3.8rem;
+            }
+            .header-content p {
+                font-size: 1.35rem;
+            }
+            header {
+                height: 60vh;
+                min-height: 420px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Alessandro Memmola</h1>
-    <p style="font-size:1.4rem; margin:12px 0; opacity:0.9;">Sviluppatore · Creatore di tool utili e divertenti</p>
+    <div class="header-content">
+        <h1>Alessandro Memmola</h1>
+        <p>Sviluppatore · Creatore di tool utili e progetti creativi</p>
+    </div>
 </header>
 
 <div class="container">
 
     <section>
-        <h2 style="color:#58a6ff;">Chi sono</h2>
+        <h2>Chi sono</h2>
         <p>
-            Ciao! Creo progetti web che rendono la vita un po’ più leggera e divertente.  
-            AskingStars è il primo – un oroscopo Q&A ironico.  
-            Qui trovi tutti i miei lavori, idee in corso e modi per supportarmi.
+            Ciao! Sono Alessandro Memmola, appassionato di sviluppo web e creazione di progetti che semplificano o divertono la vita quotidiana.<br>
+            AskingStars è stato il primo, ma qui trovi tutto il mio percorso, i lavori in corso e i contatti per collaborazioni.
         </p>
     </section>
 
     <section>
-        <h2 style="color:#58a6ff;">Progetti</h2>
+        <h2>Progetti</h2>
         <div class="projects">
             <div class="card">
                 <h3>AskingStars</h3>
-                <p>Oroscopo Q&A interattivo e divertente – chiedi alle stelle e ridi un po’.</p>
-                <p><a href="https://askingstars.com" class="btn">Visita il sito</a></p>
+                <p>Oroscopo interattivo e ironico: chiedi alle stelle o alla cartomante risposte divertenti e personalizzate.</p>
+                <a href="https://askingstars.com" class="btn" target="_blank">Visita il sito</a>
             </div>
 
-            <!-- Aggiungi altri progetti qui quando li fai -->
+            <!-- Aggiungi altre card quando hai nuovi progetti -->
+            <!-- <div class="card">...</div> -->
         </div>
     </section>
 
-    <section style="text-align:center; margin:80px 0;">
-        <h2 style="color:#58a6ff;">Supportami</h2>
-        <p>Se i miei progetti ti piacciono, un piccolo supporto mi aiuta a crearne altri!</p>
-        <a href="https://github.com/sponsors/alessandromemmola" target="_blank" class="btn" style="background:#ea4aaa; margin-top:20px;">
+    <section class="support">
+        <h2>Supportami</h2>
+        <p>Se i miei progetti ti piacciono o ti sono utili, un piccolo supporto mi aiuta a crearne altri!</p>
+        <a href="https://github.com/sponsors/alessandromemmola" target="_blank" class="btn">
             Sponsor on GitHub ❤️
         </a>
     </section>
@@ -63,8 +204,10 @@
 </div>
 
 <footer>
-    <p>© 2026 Alessandro Memmola · <a href="mailto:info@alessandromemmola.com">info@alessandromemmola.com</a></p>
-    Seguimi su <a href="https://twitter.com/alexmemmola" target="_blank">X</a></p>
+    <p>© 2026 Alessandro Memmola · 
+       <a href="mailto:info@alessandromemmola.com">info@alessandromemmola.com</a> · 
+       <a href="https://github.com/alessandromemmola" target="_blank">GitHub</a>
+    </p>
 </footer>
 
 </body>
